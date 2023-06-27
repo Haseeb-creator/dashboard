@@ -1,18 +1,23 @@
 import React from 'react'
 import { Image, Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-import { images } from '../Assets/Images';
-import job from '../Assets/img/Job.png'
-import Logo from '../Assets/img/logo.svg'
-import cv from '../Assets/img/CV.png'
-import ProfileImg from '../Assets/img/profile.png'
+import job from '../Imgs/Job.png'
+import Logo from '../Imgs/logo.svg'
+import cv from '../Imgs/CV.png'
+import ProfileImg from '../Imgs/profile.png'
+import ViewProfile from '../Imgs/view.svg'
+import EditProfile from '../Imgs/edit.svg'
+import Setting from '../Imgs/settings.svg'
+import Privacy from '../Imgs/security.svg'
+import Logout from '../Imgs/exit.svg'
+
 
 const Header = () => {
 	const profileDetails = [
-		{ name: 'View Profile', icon: images.ViewProfile, href: '1.1' },
-		{ name: 'Edit Profile', icon: images.EditProfile, href: '1.2' },
-		{ name: 'Security Settings', icon: images.Setting, href: '1.3' },
-		{ name: 'Privacy Settings', icon: images.Privacy, href: '1.4' },
-		{ name: 'Logout', icon: images.Logout, href: '1.5' }
+		{ name: 'View Profile', icon: ViewProfile, href: '1.1' },
+		{ name: 'Edit Profile', icon: EditProfile, href: '1.2' },
+		{ name: 'Security Settings', icon: Setting, href: '1.3' },
+		{ name: 'Privacy Settings', icon: Privacy, href: '1.4' },
+		{ name: 'Logout', icon: Logout, href: '1.5' }
 	]
 
 	const navDetails = [
@@ -36,9 +41,9 @@ const Header = () => {
 				</Navbar.Brand>
 				<Nav >
 					{navDetails.map((detail) => (
-						<div>
+						<div key={detail.name}>
 							<Image
-								alt=""
+								alt="Img"
 								src={detail.icon}
 								width="40"
 								height="40"
@@ -55,7 +60,7 @@ const Header = () => {
 							{profileDetails.map((detail) =>
 							(<NavDropdown.Item key={detail.name} className='mb-3' href={`#action${detail.href}`}>
 								<Image
-									alt=""
+									alt="Img"
 									src={detail.icon}
 									width="22"
 									height="21"
