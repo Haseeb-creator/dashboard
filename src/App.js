@@ -43,9 +43,9 @@ function App() {
           <Header responsive={isMobile} />
 
         </Row>
-        <Container className="mt-4">
+        <Container className="mt-4 mb-4">
           <Row>
-            <Col xs={4} md={4} >
+            <Col xs={4} md={3} >
               {!isMobile && <ProfileCard />}
             </Col>
             <Col xs={12} md={6}>
@@ -57,7 +57,7 @@ function App() {
                 {!isMobile && <Route path="/settings" element={<SettingsScreen />} />}
               </Routes>
             </Col>
-            <Col xs={4} md={2}>
+            <Col xs={4} md={3} >
               {!isMobile && <EmptyCard />}
             </Col>
           </Row>
