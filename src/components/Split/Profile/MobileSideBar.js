@@ -1,27 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Image, Accordion, } from 'react-bootstrap';
 import job from '../../../Imgs/SideBarIcons/job-seeker.svg'
 import candidate from '../../../Imgs/SideBarIcons/add.svg'
 import referral from '../../../Imgs/SideBarIcons/Network.svg'
-import user from '../../../Imgs/SideBarIcons/User.svg'
 import setting from '../../../Imgs/settings.svg'
 import logout from '../../../Imgs/exit.svg'
 import ProfileImg from '../../../Imgs/profile.png'
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MobileSideBar = ({ closeOffcanvas }) => {
 
 	const sideBarDetails = [
 		{ icon: job, title: 'Jobs', Subtitle: ['Marked Jobs', 'Referred Jobs', 'Closed Jobs'], link: '1' },
 		{ icon: candidate, title: 'Candidates', Subtitle: ['Add a Candidate to your database', 'Your Candidates Database', 'Referred Candidates', 'Selected Candidates'], link: '2' },
-		/* 	{ icon: referral, title: 'Referrals', Subtitle: [], link: '3' },
-			/* 	{ icon: user, title: 'View/Update profile', Subtitle: [], link: 'profile' }, 
-			{ icon: setting, title: 'Settings', Subtitle: [], link: 'settings' },
-			{ icon: logout, title: 'Logout', Subtitle: [], link: '4' }, */
+
 	]
 
-
-	const location = useLocation();
 
 	const closeToggleOffcanvas = () => {
 		closeOffcanvas(false)
