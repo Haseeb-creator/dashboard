@@ -1,4 +1,5 @@
 :root {
+  --font: 'open sans';
   --black: rgba(51, 51, 51, 1);
   --white: rgba(255, 255, 255);
   --dust: rgba(242, 242, 242, 1);
@@ -6,6 +7,7 @@
   --light: rgba(242, 242, 242, 1);
   --lightBlue: rgba(59, 163, 221, 1);
   --formBg: rgba(230, 247, 255, 0.5);
+  --navy: rgba(19, 61, 122, 1);
 }
 
 @import url('https: //fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
@@ -71,9 +73,8 @@ a {
   color: var(--black)
 }
 
-
-a:active {
-  color: royalblue
+.activeLink {
+  color: blue;
 }
 
 .sideBarTitle {
@@ -83,6 +84,7 @@ a:active {
 
 
 .nav-tabs .nav-link {
+
   color: var(--black);
   background-color: var(--light);
   margin-right: 0.4rem;
@@ -102,6 +104,38 @@ a:active {
 form {
   background-color: var(--formBg);
 }
+
+
+.btn-secondary {
+  font-family: var(--font);
+  background-color: transparent;
+  color: var(--black);
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.btn-primary {
+  font-family: var(--font);
+  background-color: var(--navy);
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: inherit;
+  text-decoration: none;
+  color: blue;
+}
+
+.buttonLink {
+  font-family: 'open sans';
+  background-color: var(--formBg);
+  color: blue;
+  border: none;
+  font-weight: 500;
+  padding: 5px;
+}
+
 
 
 /* #F2F2F2 */

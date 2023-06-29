@@ -2,9 +2,9 @@ import React from 'react'
 import { useState } from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import { ProfileDetails } from './Split/ProfileDetails';
+import ProfileDetails from './Split/ProfileDetails';
 
-export const UpdateProfile = () => {
+const UpdateProfile = () => {
 	const [key, setKey] = useState('home');
 
 	const [profileData, setProfileData] = useState({
@@ -76,7 +76,6 @@ export const UpdateProfile = () => {
 	}
 
 
-
 	return (
 		<Tabs
 			id="controlled-tab"
@@ -86,19 +85,22 @@ export const UpdateProfile = () => {
 		>
 			<Tab eventKey="home" className='mb-2' title="General Details">
 				<div>
-					<ProfileDetails tabValueChange={handleChildValue} profileData={profileData} handleProfileData={handleProfileData} formFields={formFields} tabKey={'bank'} />
+					<ProfileDetails tabValueChange={handleChildValue} profileData={profileData} handleProfileData={handleProfileData} formFields={formFields} tabKey={'bank'} nextTab={'bank'} />
 				</div>
 			</Tab>
 			<Tab eventKey="bank" className='m-2' title="Bank Details">
 				<div>
-					<ProfileDetails tabValueChange={handleChildValue} profileData={bankData} handleProfileData={handleBankData} formFields={bankFields} tabKey={'contact'} />
+					<ProfileDetails tabValueChange={handleChildValue} profileData={bankData} handleProfileData={handleBankData} formFields={bankFields} tabKey={'contact'} nextTab={'bank'} />
 				</div>
 			</Tab>
 			<Tab eventKey="contact" title="Contact Details">
 				<div>
-					<ProfileDetails tabValueChange={handleChildValue} profileData={contactData} handleProfileData={handleContactData} formFields={contactFields} tabKey={'contact'} />
+					<ProfileDetails tabValueChange={handleChildValue} profileData={contactData} handleProfileData={handleContactData} formFields={contactFields} tabKey={'contact'} nextTab={'contact'} />
 				</div>
 			</Tab>
 		</Tabs>
 	)
 }
+
+
+export default UpdateProfile

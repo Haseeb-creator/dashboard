@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-export const ProfileDetails = ({ tabValueChange, handleProfileData, profileData, formFields, tabKey }) => {
+const ProfileDetails = ({ tabValueChange, handleProfileData, profileData, formFields, tabKey, nextTab }) => {
 	const [activeField, setActiveField] = useState(null);
 
 	const handleCancel = () => {
@@ -14,12 +14,8 @@ export const ProfileDetails = ({ tabValueChange, handleProfileData, profileData,
 		console.log('Saved!');
 	};
 
-	const handleEdit = (fieldName, value) => {
+	const handleEdit = (fieldName) => {
 		setActiveField(fieldName);
-		handleProfileData((prevData) => ({
-			...prevData,
-			[fieldName]: value
-		}));
 	};
 
 	const handleInputChange = (fieldName, value) => {
@@ -34,50 +30,92 @@ export const ProfileDetails = ({ tabValueChange, handleProfileData, profileData,
 			<div className="p-2">
 				{formFields.map((field) => (
 					<Form.Group key={field.fieldName} controlId={field.fieldName}>
-						<div className="d-flex align-items-center mb-4 mt-4">
+						<div className="d-flex  mb-4 mt-4">
 							<Form.Label
 								className="me-3"
-								style={{ width: '100%', maxWidth: '200px', textAlign: 'left', fontSize: '1rem', }}
+								style={{ width: '100%', maxWidth: '200px', textAlign: 'left', fontSize: '1rem', fontWeight: '700' }}
 							>
-								{field.label} <span style={{ float: 'right' }} className='ms-auto'>:</span>
+								{field.label} <h6 style={{ float: 'right' }}>:</h6>
 							</Form.Label>
-							<div className="input-group ">
-								{activeField === field.fieldName ? (
-									<Form.Control
-										type="text"
-										value={profileData[field.fieldName]}
-										onChange={(e) => handleInputChange(field.fieldName, e.target.value)}
-										size="sm"
+							<div className="input-group"  >
+								{nextTab === 'password' ? (<Form.Control
+									type="text"
+									value={profileData[field.fieldName]}
+									onChange={(e) => handleInputChange(field.fieldName, e.target.value)}
+									size="sm"
+								/>) :
+									(
+										<>
+											{activeField === field.fieldName ?
+												(
+													<Form.Control
+														type="text"
+														value={profileData[field.fieldName]}
+														onChange={(e) => handleInputChange(field.fieldName, e.target.value)}
+														size="sm"
+													/>
+												) : (
+													<h6 className=' float-start'>{profileData[field.fieldName]}</h6>
+												)
+											}
 
-									/>
-								) : (
-									<h5>{profileData[field.fieldName]}</h5>
-								)}
-								{field.fieldName !== 'profilePicture' && (
 
-									<a
-										style={{ color: 'blue', cursor: 'pointer', float: 'right' }}
-										onClick={() => (activeField === field.fieldName ? handleSave() : handleEdit(field.fieldName))}
-										className="ms-2 ml-auto"
-									>
-										{activeField === field.fieldName ? 'Save' : 'Edit'}
-									</a>
+											{field.fieldName !== 'profilePicture' && field.fieldName !== 'password' ? (
+												<>
+													{field.fieldName !== '2-stepVerification' ? (<Button
+														onClick={() => handleEdit(field.fieldName)}
+														style={{ marginLeft: 'auto', marginRight: '2rem' }}
+														className='buttonLink'
+													>
+														Edit
+													</Button>) : (<Button
+														className='buttonLink'
+														style={{ marginLeft: '4rem' }}
+													>
+														Set up
+													</Button>)
+													}
+												</>) : (
+												<Button
+													className='buttonLink'
+													style={{
+														...(nextTab !== 'security' ? null : { marginLeft: '4rem' })
+													}}
+												>
+													Update
+												</Button>
+											)
+											}
+										</>
+									)
+								}
 
-								)}
 							</div>
 						</div>
 					</Form.Group>
 				))}
 
 				<div className="d-flex justify-content-center mb-1 ">
-					<Button variant="secondary" className="me-3" onClick={handleCancel}>
+					{nextTab !== 'password' ? (<Button variant="secondary" className="me-3" onClick={handleCancel}>
 						Cancel
-					</Button>
-					<Button variant="primary" onClick={handleSave}>
-						Save & Next
-					</Button>
+					</Button>) : (null)}
+
+					{nextTab !== 'bank' ? (
+						<Button variant="primary" onClick={handleSave}>
+							Save
+						</Button>
+					) :
+						(
+							<Button variant="primary" onClick={handleSave}>
+								Save and Next
+							</Button>
+						)}
+
 				</div>
 			</div>
 		</Form>
 	);
 };
+
+
+export default ProfileDetails
