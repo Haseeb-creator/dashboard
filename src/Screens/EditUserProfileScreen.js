@@ -1,7 +1,7 @@
 import React from 'react'
-import GeneralUserDetails from '../components/Split/UserDetails/GeneralUserDetails'
-import BankUserDetails from '../components/Split/UserDetails/BankUserDetails'
-import ContactUserDetails from '../components/Split/UserDetails/ContactUserDetails'
+import GeneralUserDetails from '../components/UserDetails/GeneralUserDetails'
+import BankUserDetails from '../components/UserDetails/BankUserDetails'
+import ContactUserDetails from '../components/UserDetails/ContactUserDetails'
 import { Button } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { AiOutlineArrowLeft } from "react-icons/ai";

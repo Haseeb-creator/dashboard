@@ -9,7 +9,7 @@ import UpdateProfileScreen from './Screens/UpdateProfileScreen';
 import EmptyCard from './components/EmptyCard';
 import SettingsScreen from './Screens/SettingsScreen';
 import EditUserProfileScreen from './Screens/EditUserProfileScreen';
-import MobileFooter from './components/Split/Footer/MobileFooter';
+import MobileFooter from './components/Footer/MobileFooter';
 
 function App() {
 
