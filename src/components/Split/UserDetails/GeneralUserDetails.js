@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { BsPencil } from 'react-icons/bs'
 
-const EditUserDetails = () => {
+const GeneralUserDetails = () => {
 	const [fullName, setFullName] = useState('Mr. Anup Roy');
 	const [userName, setUserName] = useState('Anup Roy');
 	const [dateOfBirth, setDateOfBirth] = useState('02/05/2023');
@@ -27,24 +28,25 @@ const EditUserDetails = () => {
 
 	const handleProfilePictureUpdate = () => {
 		// For simplicity, we're just logging a message here
+		setProfilePicture('picture data')
 		console.log('Updating profile picture...');
 	};
 
 	return (
-		<Form>
+		<Form className='FormDetails p-3'>
 			<div className="d-line-block">
-				<h4 className="d-inline-block">General Details</h4>
+				<h6 className="d-inline-block">General Details</h6>
 				{isEditing === false ? (
-					<Button variant="secondary float-end" onClick={handleEdit}>
-						Edit
+					<Button className='float-end MobileButtonLink' onClick={handleEdit}>
+						<BsPencil size={18} />
 					</Button>
 				) : (
-					<Button variant="success" onClick={handleSave}>
+					<Button className=" MobileButtonLink float-end" onClick={handleSave}>
 						Save
 					</Button>
 				)}
 			</div>
-			<Form.Group controlId="fullName">
+			<Form.Group controlId="fullName" className='mb-3'>
 				<Form.Label>Full Name</Form.Label>
 				<Form.Control
 					type="text"
@@ -55,7 +57,7 @@ const EditUserDetails = () => {
 				/>
 			</Form.Group>
 
-			<Form.Group controlId="userName">
+			<Form.Group controlId="userName" className='mb-3'>
 				<Form.Label>User Name</Form.Label>
 				<Form.Control
 					type="text"
@@ -66,17 +68,17 @@ const EditUserDetails = () => {
 				/>
 			</Form.Group>
 
-			<Form.Group controlId="dateOfBirth">
+			<Form.Group controlId="dateOfBirth" className='mb-3'>
 				<Form.Label>Date of Birth</Form.Label>
 				<Form.Control
-					type="text"
+					type="number"
 					placeholder="Enter date of birth"
 					value={dateOfBirth}
 					onChange={(e) => setDateOfBirth(e.target.value)}
 					disabled={!isEditing}
 				/>
 			</Form.Group>
-			<Form.Group controlId="referredId">
+			<Form.Group controlId="referredId" className='mb-3'>
 				<Form.Label>Referred ID</Form.Label>
 				<Form.Control
 					type="text"
@@ -87,9 +89,9 @@ const EditUserDetails = () => {
 				/>
 			</Form.Group>
 
-			<Form.Group controlId="profilePicture">
-				<Form.Label>Profile Picture</Form.Label>
-				<Button variant="primary" onClick={handleProfilePictureUpdate} disabled={!isEditing}>
+			<Form.Group controlId="profilePicture" >
+				<Form.Label className='d-block'>Profile Picture</Form.Label>
+				<Button className='MobileButtonLink' onClick={handleProfilePictureUpdate} disabled={!isEditing}>
 					Update
 				</Button>
 			</Form.Group>
@@ -100,4 +102,4 @@ const EditUserDetails = () => {
 	)
 }
 
-export default EditUserDetails
+export default GeneralUserDetails

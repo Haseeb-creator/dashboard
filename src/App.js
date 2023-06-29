@@ -1,14 +1,14 @@
 import { React, useState, useEffect } from 'react';
 import './App.css';
-import './Responsive.css'
+import './Mobile.css'
 import Header from './components/Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import ProfileCard from './components/ProfileCard';
-import UpdateProfile from './components/UpdateProfile';
+import UpdateProfileScreen from './Screens/UpdateProfileScreen';
 import EmptyCard from './components/EmptyCard';
-import Settings from './components/Settings';
-import EditUserDetails from './components/Split/UserDetails/EditUserDetails';
+import SettingsScreen from './Screens/SettingsScreen';
+import EditUserProfileScreen from './Screens/EditUserProfileScreen';
 import MobileFooter from './components/Split/Footer/MobileFooter';
 
 function App() {
@@ -35,27 +35,36 @@ function App() {
   console.log(isMobile);
 
   return (
-    <Router>
-      <Header responsive={isMobile} />
-      <Container className="mt-4">
-        <Row>
-          <Col xs={3} md={3}>
-            {!isMobile && <ProfileCard />}
-          </Col>
-          <Col xs={12} md={6}>
-            <Routes>
-              <Route path="/userprofile" element={<EditUserDetails />} />
-              <Route path="/profile" element={<UpdateProfile />} />
-              <Route path="/settings" element={<Settings />} />
-            </Routes>
-          </Col>
-          <Col xs={3} md={3}>
-            {!isMobile && <EmptyCard />}
-          </Col>
+    <div style={{
+      overflow: 'hidden',
+    }}>
+      <Router>
+        <Row xs={12}>
+          <Header responsive={isMobile} />
+
         </Row>
-      </Container>
-      {isMobile && <MobileFooter />}
-    </Router>
+        <Container className="mt-4">
+          <Row>
+            <Col xs={4} md={4} >
+              {!isMobile && <ProfileCard />}
+            </Col>
+            <Col xs={12} md={6}>
+              <Routes>
+                {isMobile && <Route path="/userprofile" element={<EditUserProfileScreen />} />}
+
+                {!isMobile && <Route path="/profile" element={<UpdateProfileScreen />} />}
+
+                {!isMobile && <Route path="/settings" element={<SettingsScreen />} />}
+              </Routes>
+            </Col>
+            <Col xs={4} md={2}>
+              {!isMobile && <EmptyCard />}
+            </Col>
+          </Row>
+        </Container>
+        {isMobile && <MobileFooter />}
+      </Router>
+    </div>
   );
 }
 

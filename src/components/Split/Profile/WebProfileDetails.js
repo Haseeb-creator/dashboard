@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const ProfileDetails = ({ tabValueChange, handleProfileData, profileData, formFields, tabKey, nextTab }) => {
+const WebProfileDetails = ({ tabValueChange, handleProfileData, profileData, formFields, tabKey, nextTab }) => {
 	const [activeField, setActiveField] = useState(null);
 
 	const handleCancel = () => {
@@ -118,4 +118,4 @@ const ProfileDetails = ({ tabValueChange, handleProfileData, profileData, formFi
 };
 
 
-export default ProfileDetails
+export default WebProfileDetails

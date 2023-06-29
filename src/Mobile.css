@@ -175,3 +175,42 @@
 	top: 37%;
 	left: 35%;
 }
+
+
+/* mobile from styling  */
+
+.FormDetails div h6 {
+	font-weight: 700;
+	font-size: 15px;
+}
+
+
+.from-control {
+	background-color: var(--formBg);
+}
+
+.form-control:disabled {
+	background-color: var(--formBg);
+	opacity: 1;
+	border: inherit;
+	padding: 0;
+}
+
+.FormDetails .form-label {
+	font-size: 15px;
+	font-weight: 300;
+	color: var(--lightBlack);
+	margin-bottom: 0;
+}
+
+.MobileButtonLink {
+	color: blue;
+	background-color: var(--formBg);
+	border: inherit;
+	padding: 0;
+}
+
+.btn:disabled {
+	color: blue;
+	background-color: var(--formBg);
+}

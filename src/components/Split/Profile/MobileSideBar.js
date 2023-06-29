@@ -30,10 +30,10 @@ const MobileSideBar = ({ closeOffcanvas }) => {
 
 	return (
 		< >
-			<div className=" d-block profileHead ">
+			<div className=" d-block profileHead " >
 				<Image src={ProfileImg} alt="Profile" className="rounded-circle  d-block mb-3" width={50} height={50} />
 				<h5 style={{ fontWeight: '400' }}>Dr. Arvind K</h5>
-				<Link to='profile' style={{ color: 'rgba(22, 118, 243, 1)', fontSize: '0.9rem' }} onClick={closeToggleOffcanvas}>Update Profile</Link>
+				<Link to='userprofile' style={{ color: 'rgba(22, 118, 243, 1)', fontSize: '0.9rem' }} onClick={closeToggleOffcanvas}>Update Profile</Link>
 			</div>
 
 			<Card.Body style={{ borderTop: '1px solid rgba(0, 0, 0, 0.2)' }}>
