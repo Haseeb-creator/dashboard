@@ -27,11 +27,11 @@ body {
   padding-bottom: 0;
 }
 
-.navbar-expand .navbar-nav .dropdown-menu {
+.navbar-expand-sm .navbar-nav .dropdown-menu {
   background-color: var(--dust);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
   border: none;
-  border-radius: 0;
+  border-radius: 2;
   margin-top: 0.8rem;
 }
 
