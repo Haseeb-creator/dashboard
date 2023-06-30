@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import ProfileDetails from '../components/Split/Profile/WebProfileDetails';
+import ProfileDetails from '../components/Profile/WebProfileDetails'
 const Settings = () => {
 	const [key, setKey] = useState('privacy');
 

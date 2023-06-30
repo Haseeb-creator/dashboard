@@ -6,8 +6,8 @@ import EditProfile from '../Imgs/edit.svg'
 import Setting from '../Imgs/settings.svg'
 import Privacy from '../Imgs/security.svg'
 import Logout from '../Imgs/exit.svg'
-import WebHeader from './Split/Header/WebHeader';
-import MobileHeader from './Split/Header/MobileHeader'
+import WebHeader from './Header/WebHeader';
+import MobileHeader from './Header/MobileHeader'
 
 const Header = ({ responsive }) => {
 

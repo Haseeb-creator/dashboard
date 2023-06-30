@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, Image, Accordion, } from 'react-bootstrap';
-import job from '../../../Imgs/SideBarIcons/job-seeker.svg'
-import candidate from '../../../Imgs/SideBarIcons/add.svg'
-import referral from '../../../Imgs/SideBarIcons/Network.svg'
-import setting from '../../../Imgs/settings.svg'
-import logout from '../../../Imgs/exit.svg'
-import ProfileImg from '../../../Imgs/profile.png'
+import job from '../../Imgs/SideBarIcons/job-seeker.svg'
+import candidate from '../../Imgs/SideBarIcons/add.svg'
+import referral from '../../Imgs/SideBarIcons/Network.svg'
+import setting from '../../Imgs/settings.svg'
+import logout from '../../Imgs/exit.svg'
+import ProfileImg from '../../Imgs/profile.png'
 import { Link } from 'react-router-dom';
 
 const MobileSideBar = ({ closeOffcanvas }) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
-import WebProfileDetails from '../components/Split/Profile/WebProfileDetails';
+import WebProfileDetails from '../components/Profile/WebProfileDetails';
 
 const UpdateProfile = () => {
 	const [key, setKey] = useState('home');

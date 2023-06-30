@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, FormControl, Form, Container, Offcanvas, Image } from 'react-bootstrap';
-import Bell from '../../../Imgs/bell.svg'
-import Search from '../../../Imgs/search.svg'
+import Bell from '../../Imgs/bell.svg'
+import Search from '../../Imgs/search.svg'
 import MobileSideBar from '../Profile/MobileSideBar';
 
 

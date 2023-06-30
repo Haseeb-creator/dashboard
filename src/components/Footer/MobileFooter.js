@@ -10,6 +10,7 @@ import { FaPlus } from "react-icons/fa6";
 const MobileFooter = () => {
 
 	const location = useLocation();
+
 	return (
 		<Navbar fixed="bottom" className='bottom-tab-nav' >
 			<Nav className="justify-content-around w-100 footNav" >

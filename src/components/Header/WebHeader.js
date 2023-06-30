@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-import Logo from '../../../Imgs/logo.svg'
-import ProfileImg from '../../../Imgs/profile.png'
+import Logo from '../../Imgs/logo.svg'
+import ProfileImg from '../../Imgs/profile.png'
 
 const WebHeader = ({ profileDetails, navDetails }) => {
 	return (
